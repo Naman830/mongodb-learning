@@ -26,8 +26,14 @@ const MovieModel = mongoose.model("Movie", movieSchema);
 
 const allDoc = async () => {
   try {
-   // const result = await MovieModel.find() //Retrive all data
-    console.log(result);
+   const result = await MovieModel.find() //Retrive all data
+   // console.log(result);
+
+  // iterating data
+result.forEach((movie) => {
+  console.log(movie.money);
+})
+
   } catch (error) {
     console.log(error);
   }
