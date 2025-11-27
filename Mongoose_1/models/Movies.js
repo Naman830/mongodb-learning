@@ -24,19 +24,16 @@ const movieSchema = new mongoose.Schema({
 // This Movie is our collection name
 const MovieModel = mongoose.model("Movie", movieSchema);
 
-const allDoc = async () => {
+const singleDoc = async () => {
   try {
-   const result = await MovieModel.find() //Retrive all data
+   const result = await MovieModel.findById("692883c3bdc56ed6a9d2fde3", "name") //Retrive all data/
    // console.log(result);
+console.log(result);
 
   // iterating data
-result.forEach((movie) => {
-  console.log(movie.money);
-})
-
   } catch (error) {
     console.log(error);
   }
 };
 
-export { allDoc };
+export { singleDoc };
