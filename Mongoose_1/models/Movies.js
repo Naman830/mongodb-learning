@@ -24,16 +24,15 @@ const movieSchema = new mongoose.Schema({
 // This Movie is our collection name
 const MovieModel = mongoose.model("Movie", movieSchema);
 
-const singleDoc = async () => {
+const docWithField = async () => {
   try {
-   const result = await MovieModel.findById("692883c3bdc56ed6a9d2fde3", "name") //Retrive all data/
-   // console.log(result);
-console.log(result);
+    const result = await MovieModel.find({ money: { $gt: 60000 } });
+    console.log(result);
 
-  // iterating data
+    // iterating data
   } catch (error) {
     console.log(error);
   }
 };
 
-export { singleDoc };
+export { docWithField };

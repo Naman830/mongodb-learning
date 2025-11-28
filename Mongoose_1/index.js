@@ -1,6 +1,6 @@
 import connectDB from './db/connectDB.js';
 import express from 'express'
-import { singleDoc } from './models/Movies.js';
+import { docWithField } from './models/Movies.js';
 const app = express()
 
 // WE ARE PASSING OR || BECAUSE IT HELP GET LESS ERROR
@@ -9,7 +9,7 @@ const port = process.env.PORT || 8000;
 
 connectDB(DATABASE_URL)
 // insertManyDoc()
-singleDoc()
+docWithField()
 
 
 app.listen(port, () => console.log(`Server listening on Port ${port}`))
