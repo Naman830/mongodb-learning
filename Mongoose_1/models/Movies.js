@@ -24,9 +24,10 @@ const movieSchema = new mongoose.Schema({
 // This Movie is our collection name
 const MovieModel = mongoose.model("Movie", movieSchema);
 
-const docWithField = async () => {
+const updateById = async (id) => {
   try {
-    const result = await MovieModel.find({ money: { $gt: 60000 } });
+    // updateOne(filter, WhaToChange)
+    const result = await MovieModel.updateOne({_id: id}, { ratings: 5 });
     console.log(result);
 
     // iterating data
@@ -35,4 +36,4 @@ const docWithField = async () => {
   }
 };
 
-export { docWithField };
+export { updateById };
