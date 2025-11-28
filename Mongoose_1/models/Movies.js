@@ -24,10 +24,10 @@ const movieSchema = new mongoose.Schema({
 // This Movie is our collection name
 const MovieModel = mongoose.model("Movie", movieSchema);
 
-const updateById = async (id) => {
+const updateById = async () => {
   try {
     // updateOne(filter, WhaToChange)
-    const result = await MovieModel.updateOne({_id: id}, { ratings: 5 });
+    const result = await MovieModel.deleteMany();
     console.log(result);
 
     // iterating data

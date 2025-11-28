@@ -8,7 +8,7 @@ const DATABASE_URL = process.env.DATABASE_URL || "mongodb://127.0.0.1:27017/movi
 const port = process.env.PORT || 8000;
 
 connectDB(DATABASE_URL)
-updateById("6928860ed3d7b127ccf12c2b")
+updateById()
 
 
 app.listen(port, () => console.log(`Server listening on Port ${port}`))
